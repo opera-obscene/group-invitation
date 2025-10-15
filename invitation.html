@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="invitation.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Invitation Text / Force Reading -->
+    <div id="invitation-text" class="section">
+      <h1>You're Invited</h1>
+      <p>
+        Dear guest, we are excited to invite you to our exclusive immersive event. 
+        Please read this invitation carefully before proceeding.
+      </p>
+      <button id="ack-btn">I have read the invitation</button>
+    </div>
+
+    <!-- Guest Form -->
+    <div id="guest-form" class="section hidden">
+      <h2>RSVP</h2>
+      <form id="rsvp-form">
+        <label>
+          Full Name:
+          <input type="text" name="guestName" required>
+        </label>
+
+        <label>
+          Will you bring a plus-one?
+          <select id="plusone-select" name="plusone">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </label>
+
+        <div id="plusone-section" class="hidden">
+          <label>
+            Plus-one Full Name:
+            <input type="text" name="plusoneName" required>
+          </label>
+          <label>
+            <input type="checkbox" name="plusoneRead" required>
+            I confirm my plus-one has read the invitation
+          </label>
+        </div>
+
+        <label>
+          <input type="checkbox" name="guestRead" required>
+          I confirm I have read the invitation
+        </label>
+
+        <div class="buttons">
+          <button type="button" id="re-read-btn">Re-read Invitation</button>
+          <button type="submit">Submit RSVP</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Modal for Re-reading -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <h2>Invitation</h2>
+        <p>
+          Dear guest, we are excited to invite you to our exclusive immersive event. 
+          Please read this invitation carefully before proceeding.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="invitation.js"></script>
+</body>
+</html>
