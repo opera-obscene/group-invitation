@@ -43,3 +43,14 @@ form.addEventListener('submit', (e) => {
   // Optional: send data to n8n webhook here later
   window.location.href = "https://opera-obscene.github.io/Group-website/?success=true";
 });
+
+// Get event name from URL
+const urlParams = new URLSearchParams(window.location.search);
+const eventName = urlParams.get('event') || "Unnamed Event";
+
+// Insert event name dynamically
+const invitationHeader = document.querySelector('#invitation-text h1');
+invitationHeader.textContent = `You're invited to ${eventName}`;
+
+const modalHeader = document.querySelector('#modal h2');
+modalHeader.textContent = `Invitation to ${eventName}`;
